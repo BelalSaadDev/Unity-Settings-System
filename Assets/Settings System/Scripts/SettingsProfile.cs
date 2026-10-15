@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+[Serializable]
+public struct KeyBind
+{
+    public string name;
+    public KeyCode key;
+    public KeyCode altKey;
+}
+
 [CreateAssetMenu(menuName = "Settings Profile")]
 public class SettingsProfile : ScriptableObject
 {
@@ -17,12 +25,6 @@ public class SettingsProfile : ScriptableObject
 
     [Header("Keybind Settings")]
     public KeyBind[] keybinds;
-    [Serializable] public struct KeyBind
-    {
-        public string name;
-        public KeyCode key;
-        public KeyCode altKey;
-    }
 
     [Header("Custom Settings")]
     public SliderSettings[] customSliders;

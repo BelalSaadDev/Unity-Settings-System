@@ -126,13 +126,13 @@ public static class SettingsSystem
 
     #region Keybind Methods
     public static int KeybindsCount => defaultProfile.keybinds.Length;
-    public delegate void OnKeybindDelegate(string name, SettingsProfile.KeyBind bind);
+    public delegate void OnKeybindDelegate(string name, KeyBind bind);
     public static event OnKeybindDelegate OnKeybindChanged;
-    public static SettingsProfile.KeyBind GetKeybind(string name)
+    public static KeyBind GetKeybind(string name)
     {
         return activeProfile.GetKeybind(name);
     }
-    public static SettingsProfile.KeyBind[] GetKeybindFromKeyCode(KeyCode key)
+    public static KeyBind[] GetKeybindFromKeyCode(KeyCode key)
     {
         return activeProfile.GetKeybindFromKeyCode(key);
     }
@@ -149,7 +149,7 @@ public static class SettingsSystem
         }
         Debug.LogWarning(name + " keybind was not found, hence was not set");
     }
-    public static void SetKeybind(string name, SettingsProfile.KeyBind newKey)
+    public static void SetKeybind(string name, KeyBind newKey)
     {
         for (int i = 0; i < activeProfile.keybinds.Length; i++)
         {
@@ -177,7 +177,7 @@ public static class SettingsSystem
     }
     public static void RestoreSpecificKeybindDefault(string name)
     {
-        SettingsProfile.KeyBind defaultValue = defaultProfile.GetKeybind(name);
+        KeyBind defaultValue = defaultProfile.GetKeybind(name);
         SetKeybind(name, defaultValue);
     }
 

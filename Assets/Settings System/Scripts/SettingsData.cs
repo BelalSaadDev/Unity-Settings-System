@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using KeyBind = SettingsProfile.KeyBind;
 using SliderSettings = SettingsProfile.SliderSettings;
 using IndexSettings = SettingsProfile.IndexSettings;
 using ToggleSettings = SettingsProfile.ToggleSettings;
